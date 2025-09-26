@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ratnadeep Bose | Elite Cybersecurity Expert & Full-Stack Developer</title>
+<title>Ratnadeep Bose | Full-Stack Developer & Cybersecurity Expert</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* ===== Reset & Variables ===== */
@@ -420,6 +420,7 @@ overflow: hidden;
 border: 1px solid var(--border);
 transition: var(--transition);
 cursor: pointer;
+position: relative;
 }
 
 .project-card:hover {
@@ -436,10 +437,34 @@ align-items: center;
 justify-content: center;
 font-size: 3rem;
 color: var(--primary-bg);
+overflow: hidden;
+position: relative;
+}
+
+.project-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: var(--transition);
+}
+
+.project-card:hover .project-image img {
+transform: scale(1.05);
+}
+
+.project-link {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 2;
 }
 
 .project-info {
 padding: 2rem;
+position: relative;
+z-index: 1;
 }
 
 .project-info h3 {
@@ -744,9 +769,9 @@ background: var(--accent-hover);
 <div class="hero-container">
 <div class="hero-content">
 <h1>Hello, I'm <span class="highlight">Ratnadeep Bose</span></h1>
-<p class="hero-subtitle">Cybersecurity Expert • Bug Bounty Hunter • Educator from West Bengal, India</p>
+<p class="hero-subtitle">Full-Stack Developer • Cybersecurity Expert • Part-Time Bug Bounty Hunter</p>
 <p class="hero-description">
-I'm a passionate cybersecurity professional specializing in ethical hacking, penetration testing, and bug bounty hunting since October 2024. Currently pursuing B.A. English at University of North Bengal while teaching at Gurukul Jalpaiguri and conducting security research on HackerOne and Bugcrowd platforms.
+I'm a passionate full-stack developer and cybersecurity enthusiast from West Bengal, India. With expertise in web development and ethical hacking, I create secure, efficient applications while hunting for vulnerabilities in my free time. Currently pursuing B.A. English at University of North Bengal while actively contributing to bug bounty platforms.
 </p>
 <a href="#contact" class="cta-button">
 <i class="fas fa-handshake"></i>
@@ -756,13 +781,13 @@ Let's Collaborate!
 <div class="hero-image">
 <div class="image-container">
 <!-- REPLACE THIS PLACEHOLDER WITH YOUR ACTUAL PHOTO -->
-<img src="images/ratnadeep.png" alt="Ratnadeep Bose - Cybersecurity Expert" class="profile-photo">
+<img src="images/ratnadeep.png" alt="Ratnadeep Bose - Full-Stack Developer" class="profile-photo">
 <!-- IF YOU DON'T HAVE THE PHOTO YET, KEEP THE PLACEHOLDER: -->
 <!--
 <div class="image-placeholder">
 <i class="fas fa-user-ninja"></i>
 <div>Ratnadeep Bose</div>
-<div style="font-size: 0.8rem; margin-top: 0.5rem;">Cybersecurity Expert</div>
+<div style="font-size: 0.8rem; margin-top: 0.5rem;">Full-Stack Developer</div>
 </div>
 -->
 </div>
@@ -776,29 +801,57 @@ Let's Collaborate!
 <h2 class="section-title fade-in">About Me - The Complete Story</h2>
 <div class="about-content">
 <div class="about-text fade-in">
-<h3>From Teaching to Ethical Hacking</h3>
+<h3>From Web Development to Ethical Hacking</h3>
 <p>
-Hello! I'm Ratnadeep Bose from West Bengal, India - a unique blend of educator and cybersecurity expert. My journey began with a passion for teaching, but evolved into the fascinating world of ethical hacking and penetration testing.
+Hello! I'm Ratnadeep Bose from West Bengal, India - a dedicated full-stack developer with a passion for cybersecurity. My journey combines technical expertise in web development with the analytical mindset of a security researcher.
 </p>
 <p>
-<strong>Academic Background:</strong> Currently pursuing B.A. English at University of North Bengal (2023-2027) with minors in History and Political Science. This interdisciplinary approach has enhanced my communication skills - crucial for explaining complex security concepts to both technical and non-technical audiences.
+<strong>Academic Background:</strong> Currently pursuing B.A. English at University of North Bengal (2023-2027) with minors in History and Political Science. This interdisciplinary approach enhances my communication skills - crucial for explaining complex technical concepts to diverse audiences.
 </p>
 <p>
-<strong>Specializing in English Literature while delivering high-impact lessons in History, Geography, and Political Science for ICSE & ISC Class 8. Proven ability to simplify complex concepts, design comprehensive study materials, and create engaging learning experiences that boost student understanding and performance. Skilled at tailoring teaching strategies to diverse learning styles, ensuring academic excellence across multiple subjects.
+<strong>Full-Stack Development:</strong> I specialize in creating responsive, user-friendly web applications using modern technologies. My expertise spans frontend and backend development, database management, and deployment strategies.
 </p>
 <p>
-<strong>Cybersecurity Journey:</strong> Since October 2024, I've been actively hunting bugs on platforms like HackerOne and Bugcrowd. My expertise includes reconnaissance on major targets (app.bitgo.com, myntra.com, usdstandard.com), using advanced tools like nmap, ffuf, httpx, nikto, and wget for comprehensive security assessments.
+<strong>Cybersecurity Journey:</strong> As a part-time bug bounty hunter, I actively hunt for vulnerabilities on platforms like HackerOne and Bugcrowd. My expertise includes reconnaissance, vulnerability assessment, and penetration testing using advanced tools and methodologies.
 </p>
 <p>
-<strong>Technical Environment:</strong> I operate in a multi-VM environment with Kali Linux and Windows 11, utilizing VMware for isolated testing environments. My workflow emphasizes command-line productivity and hardware optimization research for maximum efficiency.
+<strong>Technical Environment:</strong> I work in a multi-VM environment with Kali Linux and Windows 11, utilizing VMware for isolated testing. My workflow emphasizes both development productivity and security testing efficiency.
 </p>
 <p>
-<strong>Professional Development:</strong> Beyond technical skills, I've mastered LinkedIn profile optimization, helping others create compelling professional presentations. I understand the importance of balancing technical expertise with effective communication and personal branding.
+<strong>Professional Approach:</strong> I believe in creating secure-by-design applications, implementing best practices from the initial development phase through to deployment and maintenance.
 </p>
 </div>
 <div class="skills-section fade-in">
 <h3>My Technical Arsenal</h3>
 <div class="skills-grid">
+<div class="skill-item">
+<i class="fab fa-html5"></i>
+<div>HTML5</div>
+</div>
+<div class="skill-item">
+<i class="fab fa-css3-alt"></i>
+<div>CSS3</div>
+</div>
+<div class="skill-item">
+<i class="fab fa-js-square"></i>
+<div>JavaScript</div>
+</div>
+<div class="skill-item">
+<i class="fab fa-react"></i>
+<div>React</div>
+</div>
+<div class="skill-item">
+<i class="fab fa-node-js"></i>
+<div>Node.js</div>
+</div>
+<div class="skill-item">
+<i class="fas fa-database"></i>
+<div>SQL</div>
+</div>
+<div class="skill-item">
+<i class="fab fa-python"></i>
+<div>Python</div>
+</div>
 <div class="skill-item">
 <i class="fab fa-linux"></i>
 <div>Kali Linux</div>
@@ -820,40 +873,12 @@ Hello! I'm Ratnadeep Bose from West Bengal, India - a unique blend of educator a
 <div>nikto</div>
 </div>
 <div class="skill-item">
-<i class="fas fa-download"></i>
-<div>wget</div>
+<i class="fas fa-bug"></i>
+<div>Bug Bounty</div>
 </div>
 <div class="skill-item">
-<i class="fab fa-python"></i>
-<div>Python</div>
-</div>
-<div class="skill-item">
-<i class="fab fa-js-square"></i>
-<div>JavaScript</div>
-</div>
-<div class="skill-item">
-<i class="fab fa-react"></i>
-<div>React</div>
-</div>
-<div class="skill-item">
-<i class="fab fa-node-js"></i>
-<div>Node.js</div>
-</div>
-<div class="skill-item">
-<i class="fas fa-database"></i>
-<div>SQL</div>
-</div>
-<div class="skill-item">
-<i class="fab fa-linkedin"></i>
-<div>LinkedIn Optimization</div>
-</div>
-<div class="skill-item">
-<i class="fas fa-chalkboard-teacher"></i>
-<div>ICSE & ISC Teaching</div>
-</div>
-<div class="skill-item">
-<i class="fab fa-windows"></i>
-<div>Windows 11</div>
+<i class="fab fa-git-alt"></i>
+<div>Git</div>
 </div>
 <div class="skill-item">
 <i class="fas fa-layer-group"></i>
@@ -877,7 +902,7 @@ Hello! I'm Ratnadeep Bose from West Bengal, India - a unique blend of educator a
 <h3 class="timeline-title">Intern Teacher</h3>
 <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Gurukul Jalpaiguri</div>
 <p class="timeline-description">
-Teaching English, History, and Political Science with focus on ICSE & ISC Class 8 curriculum. Created comprehensive educational content including 20+20 question papers, detailed study materials for topics like secularism, parliament, and judiciary. Specialized in "The Best Christmas Present in the World" and "Glimpses" English texts with scheduled evening sessions (7:00-8:00 PM).
+Teaching English, History, and Political Science with focus on ICSE & ISC Class 8 curriculum. Created comprehensive educational content including question papers and detailed study materials. Specialized in English texts with scheduled evening sessions.
 </p>
 </div>
 </div>
@@ -885,10 +910,10 @@ Teaching English, History, and Political Science with focus on ICSE & ISC Class 
 <div class="timeline-content">
 <div class="timeline-marker"></div>
 <div class="timeline-date">October 2024 – Present</div>
-<h3 class="timeline-title">Cybersecurity Expert & Bug Bounty Hunter</h3>
-<div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">HackerOne • Bugcrowd • Independent Research</div>
+<h3 class="timeline-title">Full-Stack Developer & Bug Bounty Hunter</h3>
+<div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">HackerOne • Bugcrowd • Independent Projects</div>
 <p class="timeline-description">
-Active security researcher specializing in web application penetration testing. Conducted reconnaissance on major targets including app.bitgo.com, myntra.com, usdstandard.com. Expert in using nmap for port scanning, ffuf for directory fuzzing, httpx for HTTP probing, nikto for vulnerability scanning, and wget for JavaScript file collection. Successfully identified P3-level vulnerabilities through systematic testing methodologies.
+Active full-stack developer and security researcher specializing in web application development and penetration testing. Conducted reconnaissance on major targets while building secure, responsive web applications. Expert in modern web technologies and security testing methodologies.
 </p>
 </div>
 </div>
@@ -899,7 +924,7 @@ Active security researcher specializing in web application penetration testing. 
 <h3 class="timeline-title">Private Tutor</h3>
 <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">Smart Learn Academy</div>
 <p class="timeline-description">
-Providing personalized coaching in arts and humanities subjects with exceptional focus on academic excellence. Developed innovative teaching methodologies combining traditional subjects with digital literacy and cybersecurity awareness. Successfully mentored 100+ students in comprehensive academic development.
+Providing personalized coaching in arts and humanities subjects with exceptional focus on academic excellence. Developed innovative teaching methodologies combining traditional subjects with technical knowledge. Successfully mentored students in comprehensive academic development.
 </p>
 </div>
 </div>
@@ -910,7 +935,7 @@ Providing personalized coaching in arts and humanities subjects with exceptional
 <h3 class="timeline-title">B.A. English Student</h3>
 <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">University of North Bengal</div>
 <p class="timeline-description">
-Pursuing Bachelor of Arts in English with History and Political Science minors. This interdisciplinary approach enhances communication skills crucial for explaining technical cybersecurity concepts to diverse audiences. Actively integrating academic learning with practical cybersecurity research and bug bounty activities.
+Pursuing Bachelor of Arts in English with History and Political Science minors. This interdisciplinary approach enhances communication skills crucial for technical documentation and client interactions. Actively integrating academic learning with practical development and security research.
 </p>
 </div>
 </div>
@@ -925,28 +950,46 @@ Pursuing Bachelor of Arts in English with History and Political Science minors. 
 <div class="projects-grid">
 <div class="project-card fade-in">
 <div class="project-image">
-<i class="fas fa-shield-alt"></i>
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Full-Stack E-Commerce Platform">
+<a href="https://your-ecommerce-project.com" class="project-link" target="_blank"></a>
 </div>
 <div class="project-info">
-<h3>Advanced Penetration Testing Suite</h3>
-<p>Comprehensive security assessment framework using nmap, ffuf, httpx, nikto, and custom Python scripts. Successfully identified vulnerabilities across multiple high-profile targets including financial and e-commerce platforms.</p>
+<h3>Full-Stack E-Commerce Platform</h3>
+<p>Complete e-commerce solution with React frontend, Node.js backend, and secure payment integration. Features user authentication, product management, shopping cart, and order processing with responsive design.</p>
 <div class="project-tags">
-<span class="tag">Kali Linux</span>
-<span class="tag">nmap</span>
-<span class="tag">ffuf</span>
-<span class="tag">httpx</span>
-<span class="tag">nikto</span>
+<span class="tag">React</span>
+<span class="tag">Node.js</span>
+<span class="tag">MongoDB</span>
+<span class="tag">Payment Gateway</span>
 </div>
 </div>
 </div>
 
 <div class="project-card fade-in">
 <div class="project-image">
-<i class="fas fa-bug"></i>
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Application Security Scanner">
+<a href="https://your-security-scanner.com" class="project-link" target="_blank"></a>
+</div>
+<div class="project-info">
+<h3>Web Application Security Scanner</h3>
+<p>Automated security testing tool that identifies vulnerabilities in web applications. Implements scanning for XSS, SQL injection, and other OWASP Top 10 vulnerabilities with detailed reporting features.</p>
+<div class="project-tags">
+<span class="tag">Python</span>
+<span class="tag">Security</span>
+<span class="tag">Automation</span>
+<span class="tag">OWASP</span>
+</div>
+</div>
+</div>
+
+<div class="project-card fade-in">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Bug Bounty Research Portfolio">
+<a href="https://hackerone.com/your-profile" class="project-link" target="_blank"></a>
 </div>
 <div class="project-info">
 <h3>Bug Bounty Research Portfolio</h3>
-<p>Collection of discovered vulnerabilities and security research contributions on HackerOne and Bugcrowd. Includes detailed writeups, proof-of-concepts, and responsible disclosure processes for P3-level security findings.</p>
+<p>Collection of discovered vulnerabilities and security research contributions on HackerOne and Bugcrowd. Includes detailed writeups, proof-of-concepts, and responsible disclosure processes.</p>
 <div class="project-tags">
 <span class="tag">Bug Bounty</span>
 <span class="tag">HackerOne</span>
@@ -958,64 +1001,51 @@ Pursuing Bachelor of Arts in English with History and Political Science minors. 
 
 <div class="project-card fade-in">
 <div class="project-image">
-<i class="fas fa-shopping-cart"></i>
+<img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Educational Platform">
+<a href="https://your-educational-platform.com" class="project-link" target="_blank"></a>
 </div>
 <div class="project-info">
-<h3>Secure E-commerce Platform</h3>
-<p>Full-stack e-commerce application with persistent data export capabilities (XLS format). Built with security-first principles, featuring encrypted payment processing and comprehensive audit logging.</p>
-<div class="project-tags">
-<span class="tag">React</span>
-<span class="tag">Node.js</span>
-<span class="tag">XLS Export</span>
-<span class="tag">Security</span>
-</div>
-</div>
-</div>
-
-<div class="project-card fade-in">
-<div class="project-image">
-<i class="fas fa-graduation-cap"></i>
-</div>
-<div class="project-info">
-<h3>ICSE & ISC Educational Content System</h3>
-<p>Comprehensive platform for creating ICSE & ISC Class 8 educational materials. Features automated question paper generation (20+20 format), study material creation, and document export workflows for effective teaching.</p>
+<h3>Educational Platform</h3>
+<p>Interactive learning management system for ICSE & ISC curriculum. Features course management, progress tracking, automated assessments, and collaborative learning tools for students and teachers.</p>
 <div class="project-tags">
 <span class="tag">Education</span>
-<span class="tag">ICSE & ISC</span>
-<span class="tag">Content Creation</span>
-<span class="tag">Teaching</span>
+<span class="tag">LMS</span>
+<span class="tag">Interactive</span>
+<span class="tag">Assessment</span>
 </div>
 </div>
 </div>
 
 <div class="project-card fade-in">
 <div class="project-image">
-<i class="fab fa-linkedin"></i>
+<img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1139&q=80" alt="Developer Toolkit">
+<a href="https://your-developer-toolkit.com" class="project-link" target="_blank"></a>
 </div>
 <div class="project-info">
-<h3>LinkedIn Profile Optimization Platform</h3>
-<p>Professional networking platform with character limit management (2,600 character About section), headline optimization, and dual expertise presentation tools for professionals with mixed backgrounds.</p>
+<h3>Developer Toolkit</h3>
+<p>Comprehensive suite of development utilities including code formatters, validators, and security testing tools. Designed to streamline the development workflow and enforce coding standards.</p>
 <div class="project-tags">
-<span class="tag">LinkedIn</span>
-<span class="tag">Professional Branding</span>
-<span class="tag">Optimization</span>
-<span class="tag">Networking</span>
+<span class="tag">Developer Tools</span>
+<span class="tag">Productivity</span>
+<span class="tag">Automation</span>
+<span class="tag">Quality</span>
 </div>
 </div>
 </div>
 
 <div class="project-card fade-in">
 <div class="project-image">
-<i class="fas fa-network-wired"></i>
+<img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Multi-VM Development Environment">
+<a href="https://your-vm-setup.com" class="project-link" target="_blank"></a>
 </div>
 <div class="project-info">
-<h3>Multi-VM Security Lab Environment</h3>
-<p>Advanced virtualized testing environment using VMware with Kali Linux and Windows 11. Optimized for hardware performance research and efficient penetration testing workflows.</p>
+<h3>Multi-VM Development Environment</h3>
+<p>Advanced virtualized development and testing environment using VMware with Kali Linux and Windows 11. Optimized for both development productivity and security testing workflows.</p>
 <div class="project-tags">
 <span class="tag">VMware</span>
 <span class="tag">Virtualization</span>
-<span class="tag">Lab Setup</span>
-<span class="tag">Hardware Optimization</span>
+<span class="tag">Development</span>
+<span class="tag">Testing</span>
 </div>
 </div>
 </div>
@@ -1031,10 +1061,10 @@ Pursuing Bachelor of Arts in English with History and Political Science minors. 
 <div class="contact-info fade-in">
 <h3>Ready for Your Next Project?</h3>
 <p>
-I'm open for exciting opportunities in cybersecurity, bug bounty collaborations, educational partnerships, and LinkedIn profile optimization. Whether you need a penetration test, want to discuss vulnerability findings, need ICSE & ISC curriculum development, or require professional networking assistance, let's connect!
+I'm open for exciting opportunities in web development, cybersecurity collaborations, and educational technology projects. Whether you need a full-stack application, security assessment, or custom software solution, let's connect!
 </p>
 <p>
-<strong>Specializations:</strong> Bug bounty hunting, penetration testing, ICSE & ISC Class 8 teaching, LinkedIn optimization, and educational content creation. Available for remote collaborations worldwide.
+<strong>Specializations:</strong> Full-stack development, bug bounty hunting, web application security, educational technology, and custom software solutions. Available for remote collaborations worldwide.
 </p>
 <ul class="contact-details">
 <li class="contact-item">
@@ -1059,7 +1089,7 @@ I'm open for exciting opportunities in cybersecurity, bug bounty collaborations,
 </li>
 <li class="contact-item">
 <i class="fas fa-briefcase"></i>
-<span>Open for Bug Bounty & Teaching Collaborations</span>
+<span>Open for Development & Security Projects</span>
 </li>
 </ul>
 </div>
@@ -1075,11 +1105,11 @@ I'm open for exciting opportunities in cybersecurity, bug bounty collaborations,
 </div>
 <div class="form-group">
 <label for="subject">Subject</label>
-<input type="text" id="subject" placeholder="Bug Bounty / Teaching / Collaboration" required>
+<input type="text" id="subject" placeholder="Web Development / Security / Collaboration" required>
 </div>
 <div class="form-group">
 <label for="message">Message</label>
-<textarea id="message" rows="5" placeholder="Tell me about your cybersecurity project, educational needs, or collaboration ideas..." required></textarea>
+<textarea id="message" rows="5" placeholder="Tell me about your project, security needs, or collaboration ideas..." required></textarea>
 </div>
 <button type="submit" class="submit-btn">
 <i class="fas fa-paper-plane"></i>
@@ -1100,7 +1130,7 @@ Let's Start Working Together!
 <a href="#" title="Twitter - Tech Updates"><i class="fab fa-twitter"></i></a>
 <a href="#" title="HackerOne - Bug Bounty Profile"><i class="fas fa-bug"></i></a>
 </div>
-<p>&copy; 2025 Ratnadeep Bose | Cybersecurity Expert & Educator from West Bengal, India</p>
+<p>&copy; 2025 Ratnadeep Bose | Full-Stack Developer & Cybersecurity Expert from West Bengal, India</p>
 </footer>
 
 <script>
@@ -1188,7 +1218,7 @@ setTimeout(() => {
 submitBtn.innerHTML = originalText;
 submitBtn.disabled = false;
 this.reset();
-alert('Thank you for reaching out! I\'ll get back to you soon regarding your cybersecurity or educational collaboration inquiry.');
+alert('Thank you for reaching out! I\'ll get back to you soon regarding your development or security project.');
 }, 2000);
 }, 1500);
 });
@@ -1253,7 +1283,7 @@ createFloatingParticles();
 
 // Console message for fellow developers
 console.log('%c🚀 Portfolio by Ratnadeep Bose', 'color: #00ff88; font-size: 16px; font-weight: bold;');
-console.log('%c🔒 Cybersecurity Expert from West Bengal, India', 'color: #00cc6a; font-size: 12px;');
+console.log('%c💻 Full-Stack Developer & Cybersecurity Expert from West Bengal, India', 'color: #00cc6a; font-size: 12px;');
 console.log('%c📧 Contact: ratnadeepbusiness321@gmail.com', 'color: #b0b0b0; font-size: 10px;');
 </script>
 </body>
