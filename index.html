@@ -1251,12 +1251,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const originalText = submitBtn.innerHTML;
 
     // Get form data
-    const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        subject: document.getElementById('subject').value.trim(),
-        message: document.getElementById('message').value.trim()
-    };
+// Get form data
+const formData = {
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    subject: document.getElementById('subject').value.trim(),
+    message: document.getElementById('message').value.trim(),
+    website: 'Portfolio'  // ← ADD THIS LINE
+};
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
