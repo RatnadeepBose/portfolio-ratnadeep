@@ -773,11 +773,6 @@ section {
   pointer-events: none;
 }
 
-
-
-
-
-
 /* Bug Bounty Section Styles */
 .bug-bounty {
   background: var(--secondary-bg);
@@ -1169,13 +1164,6 @@ section {
     border-right: none;
   }
 }
-
-
-
-
-
-
-
 .projects {
   background: var(--secondary-bg);
   position: relative;
