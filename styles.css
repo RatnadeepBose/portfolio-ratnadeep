@@ -1389,6 +1389,7 @@ section {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border-left: 3px solid var(--accent);
 }
 
 .timeline-content::before {
@@ -1412,7 +1413,111 @@ section {
   box-shadow: 
     var(--shadow-medium),
     0 0 30px rgba(0, 255, 136, 0.2);
-  background: rgba(0, 255, 136, 0.02);
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.9) 100%);
+}
+
+.timeline-content.featured {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(26, 26, 26, 0.95) 100%);
+  border-left: 3px solid var(--accent-light);
+}
+
+.timeline-content.featured:hover {
+  box-shadow: var(--shadow-medium), 0 0 15px var(--accent-glow);
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-glow);
+  z-index: 2;
+}
+
+.timeline-item:not(:last-child) .timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 0.45rem;
+  width: 2px;
+  height: calc(100% + 2rem);
+  background: linear-gradient(to bottom, var(--accent) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.timeline-title, .timeline-date, .timeline-description {
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline Header Styles */
+.timeline-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline-header .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.timeline-header .section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline Progress Line */
+.timeline-progress-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  z-index: 1;
+}
+
+.timeline-progress-line {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent-light) 50%, transparent 100%);
+  height: 0;
+  transition: height 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .timeline-date {
@@ -1505,13 +1610,17 @@ section {
 
 /* Enhanced Projects Section */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
   margin-top: 4rem;
+  perspective: 1000px;
 }
 
 .project-card {
+  flex: 0 0 calc(33.333% - 2.5rem);
+  min-width: 320px;
   background: var(--card-bg);
   border: 2px solid var(--border);
   border-radius: 24px;
@@ -1523,6 +1632,51 @@ section {
     0 0 0 1px rgba(255, 255, 255, 0.03) inset,
     var(--shadow-subtle);
   transform-origin: center;
+  /* Holographic effect properties */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backdrop-filter: blur(5px);
+}
+
+/* Holographic card effect */
+.project-card.holographic {
+  background: linear-gradient(135deg, 
+    var(--card-bg) 0%, 
+    rgba(40, 40, 60, 0.8) 50%, 
+    var(--card-bg) 100%);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(0, 255, 136, 0.2);
+}
+
+.project-card.holographic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--highlight-x, 50%) var(--highlight-y, 50%), 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 10%, 
+    rgba(255, 255, 255, 0.05) 30%, 
+    rgba(0, 255, 136, 0.05) 60%, 
+    rgba(0, 0, 0, 0) 100%);
+  background-size: 200% 200%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card.holographic:hover::before {
+  opacity: 1;
+  animation: holographicShimmer 2s infinite linear;
+}
+
+@keyframes holographicShimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
 }
 
 .project-card::before {
@@ -1540,7 +1694,7 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-12px) scale(1.02) rotateX(2deg);
+  transform: translateY(-12px) scale(1.02);
   border-color: var(--accent);
   box-shadow: 
     var(--shadow-heavy),
@@ -1579,7 +1733,7 @@ section {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.08) rotate(1deg);
+  transform: scale(1.08);
   filter: saturate(1.2) contrast(1.1) brightness(1.05);
 }
 
@@ -1615,6 +1769,8 @@ section {
 .project-card:hover .project-info p {
   color: var(--text-primary);
 }
+
+
 
 .project-tags {
   display: flex;
@@ -1968,9 +2124,105 @@ section {
   transform: translateY(0);
 }
 
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.timeline-title {
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.timeline-content:hover .timeline-title::after {
+  width: 100%;
+}
+
+.timeline-content.featured .timeline-title {
+  animation: pulse 2s infinite;
+}
+
+/* Scroll Animations */
+.scroll-fade-in, .scroll-slide-up, .scroll-slide-in, .scroll-scale-in, .scroll-rotate-in {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+.scroll-fade-in {
+  opacity: 0;
+}
+
+/* Default animations for downward scrolling */
+.scroll-slide-up {
+  transform: translateY(50px);
+}
+
+.scroll-slide-in {
+  transform: translateX(-50px);
+}
+
+.scroll-scale-in {
+  transform: scale(0.9);
+}
+
+.scroll-rotate-in {
+  transform: rotate(-10deg) scale(0.9);
+}
+
+/* Animations for upward scrolling */
+[data-scroll-direction="up"].scroll-slide-up:not(.animate) {
+  transform: translateY(-50px);
+}
+
+[data-scroll-direction="up"].scroll-slide-in:not(.animate) {
+  transform: translateX(50px);
+}
+
+[data-scroll-direction="up"].scroll-rotate-in:not(.animate) {
+  transform: rotate(10deg) scale(0.9);
+}
+
+/* Animated states */
+.scroll-fade-in.animate {
+  opacity: 1;
+}
+
+.scroll-slide-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-in.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-rotate-in.animate {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
